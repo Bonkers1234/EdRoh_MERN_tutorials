@@ -17,6 +17,20 @@ Content-Type: application/json
 }
 
 ###
+POST http://localhost:3001/auth/register
+Content-Type: application/json
+
+{
+  "firstName": "Mike",
+  "lastName": "Smith",
+  "email": "MS@gmail.com",
+  "password": "qwert",
+  "picturePath": "",
+  "location": "LA",
+  "occupation": "CEO"
+}
+
+###
 POST http://localhost:3001/auth/login
 Content-Type: application/json
 
@@ -24,3 +38,21 @@ Content-Type: application/json
   "email": "JD@gmail.com",
   "password": "qwert"
 }
+
+###
+GET http://localhost:3001/users/66914e8dce992c7fd5be0102
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTE0ZThkY2U5OTJjN2ZkNWJlMDEwMiIsImlhdCI6MTcyMDgxNDI0Mn0.dxKRApmaMhiQBn9G20_ITL_fNrLW581ea0p6DgyprhU
+
+###
+PATCH http://localhost:3001/users/66914e8dce992c7fd5be0102/66918a1979b18599cdbf325c
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTE0ZThkY2U5OTJjN2ZkNWJlMDEwMiIsImlhdCI6MTcyMDgxNDI0Mn0.dxKRApmaMhiQBn9G20_ITL_fNrLW581ea0p6DgyprhU
+
+###
+GET http://localhost:3001/users/66914e8dce992c7fd5be0102/friends
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTE0ZThkY2U5OTJjN2ZkNWJlMDEwMiIsImlhdCI6MTcyMDgxNDI0Mn0.dxKRApmaMhiQBn9G20_ITL_fNrLW581ea0p6DgyprhU 
+
+
+
