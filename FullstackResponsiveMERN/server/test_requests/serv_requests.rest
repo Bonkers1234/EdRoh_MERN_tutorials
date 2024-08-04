@@ -54,5 +54,8 @@ GET http://localhost:3001/users/66914e8dce992c7fd5be0102/friends
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTE0ZThkY2U5OTJjN2ZkNWJlMDEwMiIsImlhdCI6MTcyMDgxNDI0Mn0.dxKRApmaMhiQBn9G20_ITL_fNrLW581ea0p6DgyprhU 
 
-
+###
+PATCH http://localhost:3001/users/66997232c4149fdffb0f34da/66997232c4149fdffb0f34da
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2OTk3MjMyYzQxNDlmZGZmYjBmMzRkYSIsImlhdCI6MTcyMjc4MTAwMX0.LBTWvyanXDNTF0oSbpaC5q2BWXegPvomvK8CadwY9PQ
 
