@@ -26,13 +26,14 @@ import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { setPosts } from 'state'
 
-const MyPostWidget = ({ picturePath }) => {
+const MyPostWidget = () => {
   const dispatch = useDispatch()
   const [isImage, setIsImage] = useState(false)
   const [image, setImage] = useState(null)
   const [post, setPost] = useState('')
   const { palette } = useTheme()
-  const { id } = useSelector(({ user }) => user)
+  /* Addded 'picturePath' from 'useSelector' since it has to always be logged in user */
+  const { id, picturePath } = useSelector(({ user }) => user)
   const token = useSelector(({ token }) => token)
   const isNonMobileScreens = useMediaQuery('(min-width: 1000px)')
   const mediumMain = palette.neutral.mediumMain
