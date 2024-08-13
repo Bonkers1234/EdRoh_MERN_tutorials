@@ -2,15 +2,16 @@
 import { Box, Typography, useTheme } from "@mui/material";
 import Friend from "componentes/Friend";
 import WidgetWrapper from "componentes/WidgetWrapper";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setFriends } from "state";
+// import { setFriends } from "state";
 
 const FriendListWidget = ({ userId }) => {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
+  const [friendsLocal, setFriendsLocal] = useState([])
   const { palette } = useTheme()
   const token = useSelector(({token}) => token)
-  const friends = useSelector(({user}) => user.friends)
+  // const friends = useSelector(({user}) => user.friends)
   
   const getFriends = async () => {
     const response = await fetch(
@@ -20,7 +21,9 @@ const FriendListWidget = ({ userId }) => {
       }
     )
     const data = await response.json()
-    dispatch(setFriends({ friends: data }))
+    // dispatch(setFriends({ friends: data }))
+    /* Disconnected 'friends' data from 'store' into local state to provide proper number of friends after 'redirect' */
+    setFriendsLocal(data)
   }
  
   useEffect(() => {
@@ -38,7 +41,7 @@ const FriendListWidget = ({ userId }) => {
         Friend List
       </Typography>
       <Box display='flex' flexDirection='column' gap='1.5rem'>
-        {friends.map((friend) => (
+        {friendsLocal.map((friend) => (
           <Friend
             key={friend.id}
             friendId={friend.id}
